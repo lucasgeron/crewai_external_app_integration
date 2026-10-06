@@ -1,0 +1,5 @@
+.env
+__pycache__/
+*.pyc
+# The SQLite database (created when the app starts)
+data/

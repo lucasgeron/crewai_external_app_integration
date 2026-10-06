@@ -1,0 +1,47 @@
+# Root safety net. Each project also has its own .gitignore; these rules make sure
+# nothing below is committed by accident, whatever the folder.
+
+# --- Created by ./dev.sh (pid files and logs of the services it starts)
+.run/
+
+# --- Dependencies and virtual environments (reinstalled with `uv sync` / `npm install`)
+node_modules/
+.venv/
+venv/
+.next
+
+# --- Python caches and build output
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+dist/
+build/
+*.egg-info/
+
+# --- Next.js build output and caches
+.next/
+out/
+*.tsbuildinfo
+
+# --- Secrets and local settings (only the .env.example files are versioned)
+.env
+.env.*
+!.env.example
+
+# --- Data generated while running (SQLite file of the backend: external_app/backend/data/)
+# crewai_flow: SQLite with the flow states
+storage/
+# crewai_flow: import reports (.log)
+output/
+# crewai CLI local cache
+.crewai/
+*.db
+*.sqlite3
+
+# --- Tools and editors
+.DS_Store
+.idea/
+.vscode/
+.ai-memory.toml
